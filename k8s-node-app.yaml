@@ -11,16 +11,16 @@ spec:
   selector:
     matchLabels:
       app: nodejs-app
-    template:
-      metadata:
-        labels:
-          app: nodejs-app
-      spec:
-        containers:
-        - name: nodejs-app
-          images: "devopshint/noe-app:latest"
-          ports:
-          - containerPort: 3000
+  template:
+    metadata:
+      labels:
+        app: nodejs-app
+    spec:
+      containers:
+      - name: nodejs-app
+        images: "devopshint/noe-app:latest"
+        ports:
+        - containerPort: 3000
 
 ---
 
