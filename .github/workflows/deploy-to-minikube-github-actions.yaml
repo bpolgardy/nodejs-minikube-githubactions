@@ -23,10 +23,11 @@ jobs:
       run: |
           kubectl apply -f k8s-node-app.yaml
           kubectl rollout status deployment/nodejs-app
-    - name: Verify k8s service and endpoints
+    - name: Verify k8s service, endpoints and pod log
       run: |
           kubectl describe svc nodejs-app
           kubectl get endpoints nodejs-app
+          kubectl logs -l app=nodejs-app
     - name: Test service URLs
       run: |
           minikube service list
